@@ -49,7 +49,7 @@ def save_text_to_mongodb(text):
             print("No text to save to MongoDB.")
 
 # Example usage
-pdf_path = './pdf.pdf'
+pdf_path = './pdf_two.pdf'
 text = extract_text_from_pdf_with_pdfplumber(pdf_path)
 
 # Print extracted text for debugging purposes
@@ -65,9 +65,20 @@ def verify_text_in_mongodb():
         chunk_id = doc.get('chunk_id', 'N/A')  # Retrieve chunk ID if present
         text_data = doc.get('text', '[No Text Found]')  # Retrieve text data
         if text_data != '[No Text Found]':
-            print(f"Chunk ID: {chunk_id}")
-            print(f"Text: {text_data[:1000]}...")  # Print only the first 1000 characters for brevity
+            # print(f"Chunk ID: {chunk_id}")
+            print(f"Text: {text_data}")
+            # print(f"Text: {text_data[:1000]}...")  # Print only the first 1000 characters for brevity
         else:
             print("No text was found in the document.")
 
 verify_text_in_mongodb()
+
+
+
+
+
+
+
+
+
+
